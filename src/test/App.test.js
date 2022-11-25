@@ -1,23 +1,31 @@
 import { render, screen } from '@testing-library/react';
 import App from '../App';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import {store} from "../redux/store";
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+
+function renderizaPagina(element) {
+  render(
+    <Provider store={store}>
+        <BrowserRouter>
+            {element}
+        </BrowserRouter>
+    </Provider>
+  )
+}
+
 
 describe("suite de testes que verificam se a pagina renderiza com sucesso", ()=> {
-  beforeEach(() => {
-    //armazena o historico da sessao
-    const currentState = window.history.state;
-    //subtitui a url atual pelo '/'
-    window.history.replaceState(currentState, '', '/');
+  it("verifica se a pagina home renderiza com sucesso", () => {
+    renderizaPagina(<Home />);
+    expect(screen.getByTestId("home-page")).toBeInTheDocument();
   });
 
-  test("verifica se pagina home renderiza com sucesso", () => {
-    //redireciona a url atual para a '/home'
-    window.history.pushState({}, "Teste da Pagina Home", "/home")
+  it("verifica se a pagina login renderiza com sucesso", () => {
+    renderizaPagina(<Login />);
+    expect(screen.getByTestId("login-page")).toBeInTheDocument();
+  });
 
-    //renderiza a pagina
-    render(<App />)
-
-    //verifica se o test-id esta no documento, se sim a pagina foi renderizada
-    const testId = screen.getByTestId("home-page")
-    expect(testId).toBeInTheDocument();
-  })
 })

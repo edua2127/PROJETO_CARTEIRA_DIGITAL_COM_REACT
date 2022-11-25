@@ -1,4 +1,6 @@
+// @ts-ignore
 import React, { useState } from "react"
+// @ts-ignore
 import style from '../styles/login.module.css'
 import TextField from "@mui/material/TextField"
 import MyButton from "../components/login_buttons"
@@ -53,7 +55,7 @@ const Login = () => {
 
 
   return (
-    <div>
+    <div data-testid="login-page">
             <main className={style.login_back}>
                 <section className={style.login_center}>
                     <h1 className={style.login_logo}>WALLE</h1>
