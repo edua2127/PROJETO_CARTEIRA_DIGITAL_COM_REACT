@@ -1,8 +1,7 @@
 import {fireEvent, render, screen} from "@testing-library/react";
-import {Provider} from "react-redux";
+import {Provider, useSelector} from "react-redux";
 import {store} from "../redux/store";
 import {BrowserRouter} from "react-router-dom";
-
 import Home from '../pages/Home';
 
 function renderizaPagina(element) {
@@ -14,6 +13,7 @@ function renderizaPagina(element) {
         </Provider>
     )
 }
+
 
 describe("suite de testes da pagina home", () => {
 
@@ -56,7 +56,7 @@ describe("suite de testes da pagina home", () => {
     })
 
     it("verifica se os campos sào limpos após cadastrar uma despesa", () => {
-       renderizaPagina(<Home/>);
+        renderizaPagina(<Home/>);
         const inputValor = screen.getByTestId("home-page-input-valor");
         const inputDescricao = screen.getByTestId("home-page-input-descricao");
         const inputTag = screen.getByTestId("home-page-select-tag");
@@ -77,7 +77,28 @@ describe("suite de testes da pagina home", () => {
         expect(inputTag).toHaveValue("ALIMENTAÇÃO");
         expect(inputMetodoDePagamento).toHaveValue("DINHEIRO");
         expect(inputMoeda).toHaveValue("BRL");
-    } )
+    })
 
+    it("simula a ação de cadastrar uma despesa", () => {
+        renderizaPagina(<Home/>);
+
+        const corpoDaTabela = screen.getByTestId("home-page-tbody");
+        const inputValor = screen.getByTestId("home-page-input-valor");
+        const inputDescricao = screen.getByTestId("home-page-input-descricao");
+        const inputTag = screen.getByTestId("home-page-select-tag");
+        const inputMetodoDePagamento = screen.getByTestId("home-page-select-metodoDePagamento");
+        const inputMoeda = screen.getByTestId("home-page-select-moeda");
+        const inputButton = screen.getByTestId("home-page-button-submit");
+
+        fireEvent.change(inputValor, {target: {value: 100}});
+        fireEvent.change(inputDescricao, {target: {value: "teste"}});
+        fireEvent.change(inputTag, {target: {value: "LAZER"}});
+        fireEvent.change(inputMetodoDePagamento, {target: {value: "CARTÃO DE DÉBITO"}});
+        fireEvent.change(inputMoeda, {target: {value: "DOLAR"}});
+
+        fireEvent.click(inputButton);
+
+        expect(corpoDaTabela).toHaveTextContent("100");
+    })
 
 });

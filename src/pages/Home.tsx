@@ -208,7 +208,7 @@ const Home = () => {
                                 <th className={style.home_table_td_th}>Descricao</th>
                             </tr>
                             </thead>
-                            <tbody className={style.home_table_body}>
+                            <tbody className={style.home_table_body} data-testid="home-page-tbody">
 
                             {stateGeral.geral.despesas.length > 0 && stateGeral.geral.despesasExibidas.map((item: despesa, index: number) => {
                                 let data = new Date(item.data.getFullYear(), item.data.getMonth(), item.data.getDate())
