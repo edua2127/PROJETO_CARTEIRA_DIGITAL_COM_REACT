@@ -64,6 +64,7 @@ const Login = () => {
                     id="email" label="Email" 
                     value={email} type="email"
                     variant="standard"
+                    data-testid="email-login"
                     onChange={(e) => setEmail(e.target.value) }
                     /> : <TextField className={style.login_input} error
                                     helperText="Email Invalido!"
@@ -77,6 +78,7 @@ const Login = () => {
                     id="senha" label="Senha" 
                     value={password} type="password"
                     variant="standard"
+                    data-testid="senha-login"
                     onChange={(e) => setPassword(e.target.value) }
                     /> : <TextField className={style.login_input} error
                                     helperText="Senha Invalida!"
