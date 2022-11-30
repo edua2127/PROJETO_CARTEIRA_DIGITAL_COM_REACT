@@ -1,8 +1,12 @@
+// @ts-ignore
 import React from 'react';
+// @ts-ignore
 import style from '../styles/EditarPeriodo.module.css';
 import {useDispatch, useSelector} from 'react-redux';
+// @ts-ignore
 import type { RootState } from '../redux/store.ts';
 import { despesa } from '../interface/despesa';
+// @ts-ignore
 import {editaAplicarFiltro, editaDespesasExibidas, editaPeriodoFinal, editaPeriodoInicial} from '../redux/geralSlice.ts';
 
 
@@ -29,21 +33,21 @@ const EditorPeriodo = () => {
     }
 
     return (
-        <section className={style.home_end_page}>
+        <section className={style.home_end_page} data-testid="editor-periodo-test-id">
             <article className={style.home_article_edicao_data}>
                 <label>
                     <span className={style.home_texto_data}>Periodo Inicial</span>
-                    <input type={"date"} className={style.home_input}
+                    <input type={"date"} className={style.home_input} data-testid="input-periodo-inicial-test-id"
                            value={stateGeral.geral.periodoInicial.toString()}
                            onChange={(e) => dispatch(editaPeriodoInicial(e.target.value))}/>
                 </label>
                 <label>
                     <span className={style.home_texto_data}>Periodo Final</span>
-                    <input type={"date"} className={style.home_input}
+                    <input type={"date"} className={style.home_input} data-testid="input-periodo-final-test-id"
                            value={stateGeral.geral.periodoFinal.toString()}
                            onChange={(e) => dispatch(editaPeriodoFinal(e.target.value))}/>
                 </label>
-                <input type={"submit"} className={style.home_input} onClick={handleAplicarFiltro}/>
+                <input type={"submit"} data-testid="input-submit-test-id" className={style.home_input} onClick={handleAplicarFiltro}/>
             </article>
         </section>
     )

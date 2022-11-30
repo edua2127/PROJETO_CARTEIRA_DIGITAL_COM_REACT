@@ -16,7 +16,7 @@ import { editaAtualizaValorDolar, editaDataAtualDoFiltro, editaAplicarFiltro} fr
 import {editaDescricao, editaDataDaDespesa, editaMoeda, editaTag, editaValor, editaValorDolar, } from '../redux/geralSlice.ts';
 
 // @ts-ignore
-import {editaDespesas, editaDespesasExibidas, editaMetodoDePagamento,  editaValorTotal} from '../redux/geralSlice';
+import {editaDespesas, editaDespesasExibidas, editaMetodoDePagamento,  editaValorTotal} from '../redux/geralSlice.ts';
 // @ts-ignore
 import EditorPeriodo from '../components/EditorPeriodo.tsx';
 
@@ -81,6 +81,8 @@ const Home = () => {
             console.log('erro ao carregar o valor do dolar ' + error)
         }
     }
+
+   
 
     function calculoDoValorTotal() {
         const despesaExibidasLocal: despesa[] = stateGeral.geral.despesasExibidas

@@ -9,9 +9,9 @@ import {store} from './redux/store.ts'
 import './styles/global.css'
 function App() {
   return (
-    <Provider store={store}>
+    <Provider store={store} >
       <BrowserRouter>
-        <Routes>
+        <Routes data-testid="app-page">
           <Route path="/login" element={<Login />}/>
           <Route path="/home" element={<Home />}/>
         </Routes>

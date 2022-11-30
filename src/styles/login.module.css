@@ -19,6 +19,17 @@
     border-radius: 5%;
 }
 
+.login_article {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-evenly;
+    background-color: #448AFF;
+    width: 90%;
+    height: 69.44%;
+    border-radius: 5%;
+}
+
 .login_buttons {
     display: flex;
     flex-direction: row;
@@ -36,6 +47,30 @@
 }
 
 .login_input {
-    width: 73.6%;
+    width: 90.6%;
     align-self: center;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #FFF;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #303F9F;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.login_label {
+    color: white;
+    font-size: 20px;
+    font-family: Helvetica;
+    font-style: italic;
+    margin: unset;
+}
+
+.login_label_error {
+    color: red;
+    font-size: 20px;
+    font-family: Helvetica;
+    font-style: italic;
+    margin: unset;
 }

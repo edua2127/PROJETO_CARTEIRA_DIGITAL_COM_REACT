@@ -24,4 +24,16 @@ describe("basic login elements testing switch", () => {
         expect(screen.getByRole('button', {name: /entrar/i})).toBeInTheDocument();
     })
 
+    it("simula a ação de login", () => {
+        renderizaPagina(<Login/>)
+        const inputEmail = screen.getByTestId("email-login");
+        const inputSenha = screen.getByTestId("senha-login");
+        const button = screen.getByTestId("button-login");
+
+        fireEvent.change(inputEmail, {target: {value: "eduardo123@gmail.com"}});
+        fireEvent.change(inputSenha, {target: {value: "Edu456789#$%%1234"}});
+        fireEvent.click(button);
+        expect(window.location.pathname).toBe("/home")
+    })
+
 })

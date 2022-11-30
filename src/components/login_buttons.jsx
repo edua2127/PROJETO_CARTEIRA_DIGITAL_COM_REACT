@@ -13,8 +13,8 @@ const buttonTheme = createTheme({
 export default function MyButton({ children , handleEvent}) {
   return (
     <ThemeProvider theme={buttonTheme}>
-        <Button 
-			variant="outlined" 
+        <Button data-testid="login-button"
+			    variant="outlined" 
         	size="large" 
         	onClick={handleEvent}>
             	{children}

@@ -2,11 +2,8 @@
 import React, { useState } from "react"
 // @ts-ignore
 import style from '../styles/login.module.css'
-import TextField from "@mui/material/TextField"
-import MyButton from "../components/login_buttons"
 import { useNavigate } from "react-router-dom"
-
-
+import Button from '@mui/material/Button';
 const Login = () => {
     function validateEmail(email: string) {
         var filter = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
@@ -59,38 +56,20 @@ const Login = () => {
             <main className={style.login_back}>
                 <section className={style.login_center}>
                     <h1 className={style.login_logo}>WALLE</h1>
-
-                    {validoEmail === 'true' ? <TextField className={style.login_input}
-                    id="email" label="Email" 
-                    value={email} type="email"
-                    variant="standard"
-                    data-testid="email-login"
-                    onChange={(e) => setEmail(e.target.value) }
-                    /> : <TextField className={style.login_input} error
-                                    helperText="Email Invalido!"
-                                    id="email" label="Email"
-                                    value={email} type="email"
-                                    variant="standard"
-                                    onChange={(e) => setEmail(e.target.value) }
-                    />}
-
-                    {validoSenha === 'true' ? <TextField className={style.login_input}
-                    id="senha" label="Senha" 
-                    value={password} type="password"
-                    variant="standard"
-                    data-testid="senha-login"
-                    onChange={(e) => setPassword(e.target.value) }
-                    /> : <TextField className={style.login_input} error
-                                    helperText="Senha Invalida!"
-                                    value={password} type="password" label="Senha"
-                                    variant="standard"
-                                    onChange={(e) => setPassword(e.target.value) }
-                    />}
-
-                    <section className={style.login_buttons}>
-                        <MyButton handleEvent={handleCadastro}>Cadastrar</MyButton>
-                        <MyButton handleEvent={useLogin}>Entrar</MyButton>
-                    </section>
+                    <article className={style.login_article}>
+                        <label>
+                            {validoEmail === 'true' ? <p className={style.login_label}>Email</p> : <p className={style.login_label_error}>Email inválido</p>}
+                            <input data-testid="email-login" className={style.login_input} type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                        </label>
+                        <label>
+                            {validoSenha === 'true' ? <p className={style.login_label}>Senha</p> : <p className={style.login_label_error}>Senha inválida</p>}
+                            <input data-testid="senha-login" className={style.login_input} type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        </label>
+                    </article>
+                    <article className={style.login_buttons}>
+                        <Button variant="outlined" onClick={handleCadastro}>Cadastrar</Button>
+                        <Button variant="outlined" data-testid="button-login" size="large" onClick={useLogin}>Entrar</Button>
+                    </article>
                 </section>
             </main>
         </div>
