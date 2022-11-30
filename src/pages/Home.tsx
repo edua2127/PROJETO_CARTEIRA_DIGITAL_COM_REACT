@@ -1,5 +1,5 @@
 // @ts-ignore
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 
 // @ts-ignore
@@ -26,6 +26,8 @@ const Home = () => {
     let DateType: Date = new Date(Date.now())
     const dispatch = useDispatch()
     const stateGeral = useSelector((state: RootState) => state)
+    const [moedasApi, setMoedasApi] = React.useState([])
+    const [mostrarMoedas, setMostrarMoedas] = React.useState(false)
 
 
     React.useEffect(() => {
@@ -90,8 +92,8 @@ const Home = () => {
         despesaExibidasLocal.map((despesaAtual) => {
             let valorEmReal = parseFloat(despesaAtual.valor.toString())
 
-            if (despesaAtual.moeda === 'DOLAR') {
-                valorEmReal = despesaAtual.valor * stateGeral.geral.valorDolar
+            if (despesaAtual.moeda !== 'BRL') {
+                valorEmReal = despesaAtual.valor * moedasApi[despesaAtual.moeda].bid
             }
             valorTotalAtual += valorEmReal
         })
@@ -109,17 +111,12 @@ const Home = () => {
         //guarda a nova despesa no redux state
         dispatch(editaDespesas([...stateGeral.geral.despesas, novaDespesa]))
 
-        //atualiza o valor do dolar para calcular o valor total das despesas
-        atualizaValorDolar()
     }
 
     function atualizaAsDespesasExibidas() {
         dispatch(editaDespesasExibidas(stateGeral.geral.despesas))
     }
 
-    function atualizaValorDolar() {
-        dispatch(editaAtualizaValorDolar(true))
-    }
 
     function criaUmaDespesaComOsDadosDoEditor(): despesa {
         return {
@@ -131,6 +128,23 @@ const Home = () => {
             data: stateGeral.geral.dataDaDespesa,
         }
     }
+
+    function moedasDaApi() {
+        let moedas = []
+        fetch('https://economia.awesomeapi.com.br/json/all').then((response) => {
+            return response.json();
+        }).then((data) => {
+            for (const [key, value] of Object.entries(data)) {
+                moedas.push({nomeDaMoeda: key, value: value})
+            }
+        })
+        setMoedasApi(moedas)
+        setMostrarMoedas(true)
+    }
+
+    useEffect(() => {
+        moedasDaApi()
+    }, [])
 
     function limpaOsCamposDeDespesa() {
         dispatch(editaValor(0))
@@ -161,9 +175,14 @@ const Home = () => {
                                 placeholder={"Moeda"}
                                 value={stateGeral.geral.moeda}
                                 onChange={(e) => dispatch(editaMoeda(e.target.value))}>
-
-                            <option value="BRL">REAL</option>
-                            <option value="DOLAR">DOLAR</option>
+                            <option value="" disabled>Moeda</option>
+                            {mostrarMoedas && moedasApi.map((moedaAtual) => {
+                                console.log(moedaAtual.nomeDaMoeda)
+                                console.log(moedaAtual.value)
+                                return (
+                                    <option value={`${moedaAtual.nomeDaMoeda}`}>{`${moedaAtual.nomeDaMoeda}`}</option>
+                                )
+                            })}
                         </select>
                         <select data-testid="home-page-select-metodoDePagamento" className={style.home_input}
                                 placeholder={"Metodo de Pagamento"}
