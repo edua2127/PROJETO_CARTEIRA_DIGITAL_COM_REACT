@@ -17,6 +17,12 @@ Mecanismos Estruturais
 
 | MECANISMO DE ANALISE | MECANISMO DE DESING | MECANISMO DE IMPLEMENTAÇÃO |
 | -------------------- | ------------------- | ---------------------------|
-| Camada de Estado da Aplicação | Gerenciador de Estados | redux |
+| Camada de Estado | Ferramenta que ajude a gerenciar os estados da aplicação | redux |
 | Estilização | framework que facilita a estilização de elementos | MUI|
 | Camada de Integração | Ferramenta que ajude a consumir a api de moedas | Fetch|
+| FrontEnd | Framework que permita a componentização | React|
+
+
+Casos de Uso
+
+1.
