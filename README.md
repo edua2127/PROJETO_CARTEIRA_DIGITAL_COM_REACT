@@ -30,3 +30,5 @@ Casos de Uso
 
 2.![caso-de-uso-usuario](https://user-images.githubusercontent.com/84235466/206169634-fdf69780-2713-4e48-9257-e2a5d5c2b352.png)
 
+Componentes
+
