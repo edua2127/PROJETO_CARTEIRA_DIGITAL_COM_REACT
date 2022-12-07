@@ -2,7 +2,7 @@
  
 |     DATA      |    VERSÃO     |     DESCRIÇÃO    |      AUTOR               |
 | ------------- | ------------- | -----------------|--------------------------|
-| 06/12/2022    |     1.0       | Documento inicial|Eduardo de Souza Magalhães|
+| 06/12/2022    |     1.0       | Documento inicial|Eduardo de Souza Magalhães, jean Clayton Oliveira|
 
 
 Introdução
