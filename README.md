@@ -11,4 +11,6 @@ Este documento tem por objetivo dar maior compreensão ao leitor quanto a como f
 
 Visão Geral
 
-![alt text](documentação/visão geral da arquiterura de software.PNG)
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/84235466/206159184-9de42b62-5118-4857-a2c2-8351366288e7.PNG" width="0px" />
+</div>
