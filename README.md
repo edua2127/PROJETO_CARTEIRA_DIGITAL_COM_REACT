@@ -26,3 +26,5 @@ Mecanismos Estruturais
 Casos de Uso
 
 1.![caso-de-uso-despesa](https://user-images.githubusercontent.com/84235466/206168971-cd256c90-1258-46c5-b6fd-4a5d8725d843.PNG)
+2.![caso-de-uso-usuario](https://user-images.githubusercontent.com/84235466/206169634-fdf69780-2713-4e48-9257-e2a5d5c2b352.png)
+
