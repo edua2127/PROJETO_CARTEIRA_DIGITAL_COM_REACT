@@ -10,3 +10,5 @@ Introdução
 Este documento tem por objetivo dar maior compreensão ao leitor quanto a como funciona e está estruturado está aplicação, descrevendo as camadas da aplicação, os mecanimos estruturais(escopos), casos de uso e os componentes presentes.
 
 Visão Geral
+
+![alt text](documentação/visão geral da arquiterura de software.PNG)
