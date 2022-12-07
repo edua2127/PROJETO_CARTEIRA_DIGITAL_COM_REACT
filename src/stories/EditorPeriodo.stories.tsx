@@ -1,7 +1,7 @@
-// @ts-ignore
+
 import EditorPeriodo from "../components/EditorPeriodo.tsx";
 import { Provider } from "react-redux";
-// @ts-ignore
+
 import { store } from "../redux/store.ts";
 import { Meta, StoryObj } from "@storybook/react";
 
