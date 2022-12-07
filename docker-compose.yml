@@ -1,13 +1,13 @@
-version: '3.7'
+version: "3.7"
 services:
   front:
     container_name: dockerizando-front-da-carteira
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - .:/app
-      - '/app/node_modules'
+      - "/app/node_modules"
     ports:
       - 3000:3000
     environment:

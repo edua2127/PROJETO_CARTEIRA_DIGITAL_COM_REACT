@@ -1,24 +1,26 @@
-import * as React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 
 const buttonTheme = createTheme({
-    palette: {
-        primary: {
-            main: '#000000',
-          },
+  palette: {
+    primary: {
+      main: "#000000",
     },
-  });
+  },
+});
 
-export default function MyButton({ children , handleEvent}) {
+export default function MyButton({ children, handleEvent }) {
   return (
     <ThemeProvider theme={buttonTheme}>
-        <Button data-testid="login-button"
-			    variant="outlined" 
-        	size="large" 
-        	onClick={handleEvent}>
-            	{children}
-        </Button>
+      <Button
+        data-testid="login-button"
+        variant="outlined"
+        size="large"
+        onClick={handleEvent}
+      >
+        {children}
+      </Button>
     </ThemeProvider>
   );
 }

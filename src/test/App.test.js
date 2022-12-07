@@ -1,23 +1,20 @@
-import { render, screen } from '@testing-library/react';
-import App from '../App';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import {store} from "../redux/store";
-import Home from '../pages/Home';
-import Login from '../pages/Login';
-import MyButton from '../components/login_buttons';
+import { render, screen } from "@testing-library/react";
+import App from "../App";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import MyButton from "../components/login_buttons";
 function renderizaPagina(element) {
   render(
     <Provider store={store}>
-        <BrowserRouter>
-            {element}
-        </BrowserRouter>
+      <BrowserRouter>{element}</BrowserRouter>
     </Provider>
-  )
+  );
 }
 
-
-describe("suite de testes que verificam se a pagina renderiza com sucesso", ()=> {
+describe("suite de testes que verificam se a pagina renderiza com sucesso", () => {
   it("verifica se a pagina home renderiza com sucesso", () => {
     renderizaPagina(<Home />);
     expect(screen.getByTestId("home-page")).toBeInTheDocument();
@@ -32,5 +29,4 @@ describe("suite de testes que verificam se a pagina renderiza com sucesso", ()=>
     renderizaPagina(<MyButton />);
     expect(screen.getByTestId("login-button")).toBeInTheDocument();
   });
-
-})
+});

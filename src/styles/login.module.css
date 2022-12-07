@@ -1,76 +1,76 @@
 .login_back {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    background-color: #303F9F;
-    min-width: 100vh;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: #303f9f;
+  min-width: 100vh;
+  height: 100vh;
 }
 
 .login_center {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content: space-evenly;
-    background-color: #448AFF;
-    width: 31.11%;
-    height: 69.44%;
-    border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: space-evenly;
+  background-color: #448aff;
+  width: 31.11%;
+  height: 69.44%;
+  border-radius: 5%;
 }
 
 .login_article {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content: space-evenly;
-    background-color: #448AFF;
-    width: 90%;
-    height: 69.44%;
-    border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: space-evenly;
+  background-color: #448aff;
+  width: 90%;
+  height: 69.44%;
+  border-radius: 5%;
 }
 
 .login_buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .login_logo {
-    align-self: center;
-    font-size: 120px;
-    color: #c5cae9;
-    font-family: Helvetica;
-    font-style: italic;
-    margin: unset;
+  align-self: center;
+  font-size: 120px;
+  color: #c5cae9;
+  font-family: Helvetica;
+  font-style: italic;
+  margin: unset;
 }
 
 .login_input {
-    width: 90.6%;
-    align-self: center;
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid #FFF;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #303F9F;
-    color: white;
-    transition-duration: 0.4s;
+  width: 90.6%;
+  align-self: center;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #303f9f;
+  color: white;
+  transition-duration: 0.4s;
 }
 
 .login_label {
-    color: white;
-    font-size: 20px;
-    font-family: Helvetica;
-    font-style: italic;
-    margin: unset;
+  color: white;
+  font-size: 20px;
+  font-family: Helvetica;
+  font-style: italic;
+  margin: unset;
 }
 
 .login_label_error {
-    color: red;
-    font-size: 20px;
-    font-family: Helvetica;
-    font-style: italic;
-    margin: unset;
+  color: red;
+  font-size: 20px;
+  font-family: Helvetica;
+  font-style: italic;
+  margin: unset;
 }
