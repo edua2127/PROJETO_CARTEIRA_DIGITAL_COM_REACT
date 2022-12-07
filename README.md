@@ -11,7 +11,7 @@ Este documento tem por objetivo dar maior compreensão ao leitor quanto a como f
 
 Visão Geral
 
-![visão geral da arquiterura de software](https://user-images.githubusercontent.com/84235466/206159184-9de42b62-5118-4857-a2c2-8351366288e7.PNG)
+![visao-geral-da-arquitetura](https://user-images.githubusercontent.com/84235466/206163871-95441d3f-9e75-4283-80e0-da9d53a35d2f.PNG)
 
 Mecanismos Estruturais
 
