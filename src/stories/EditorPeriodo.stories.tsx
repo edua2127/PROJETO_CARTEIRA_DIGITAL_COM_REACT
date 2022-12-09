@@ -1,4 +1,3 @@
-
 import EditorPeriodo from "../components/EditorPeriodo.tsx";
 import { Provider } from "react-redux";
 
@@ -17,4 +16,4 @@ export default {
 
 //const Template = (args) => <EditorPeriodo {...args} />;
 
-export const Default:StoryObj = {};
+export const Default: StoryObj = {};

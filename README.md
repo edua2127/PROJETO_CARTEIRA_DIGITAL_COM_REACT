@@ -1,9 +1,8 @@
- Histórico de revisões
- 
-|     DATA      |    VERSÃO     |     DESCRIÇÃO    |      AUTOR               |
-| ------------- | ------------- | -----------------|--------------------------|
-| 06/12/2022    |     1.0       | Documento inicial|Eduardo de Souza Magalhães, jean Clayton Oliveira|
+Histórico de revisões
 
+| DATA       | VERSÃO | DESCRIÇÃO         | AUTOR                                             |
+| ---------- | ------ | ----------------- | ------------------------------------------------- |
+| 06/12/2022 | 1.0    | Documento inicial | Eduardo de Souza Magalhães, jean Clayton Oliveira |
 
 Introdução
 
@@ -15,19 +14,15 @@ Visão Geral
 
 Mecanismos Estruturais
 
-| MECANISMO DE ANALISE | MECANISMO DE DESING | MECANISMO DE IMPLEMENTAÇÃO |
-| -------------------- | ------------------- | ---------------------------|
-| Camada de Estado | Ferramenta que ajude a gerenciar os estados da aplicação | redux |
-| Estilização | framework que facilita a estilização de elementos | MUI|
-| Camada de Integração | Ferramenta que ajude a consumir a api de moedas | Fetch|
-| FrontEnd | Framework que permita a componentização | React|
-
+| MECANISMO DE ANALISE | MECANISMO DE DESING                                      | MECANISMO DE IMPLEMENTAÇÃO |
+| -------------------- | -------------------------------------------------------- | -------------------------- |
+| Camada de Estado     | Ferramenta que ajude a gerenciar os estados da aplicação | redux                      |
+| Estilização          | framework que facilita a estilização de elementos        | MUI                        |
+| Camada de Integração | Ferramenta que ajude a consumir a api de moedas          | Fetch                      |
+| FrontEnd             | Framework que permita a componentização                  | React                      |
 
 Casos de Uso
 
 1.![caso-de-uso-despesa](https://user-images.githubusercontent.com/84235466/206168971-cd256c90-1258-46c5-b6fd-4a5d8725d843.PNG)
 
-
 2.![caso-de-uso-usuario](https://user-images.githubusercontent.com/84235466/206169634-fdf69780-2713-4e48-9257-e2a5d5c2b352.png)
-
-
