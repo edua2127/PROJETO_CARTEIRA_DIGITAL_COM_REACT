@@ -17,4 +17,4 @@ export default {
 
 //const Template = (args) => <EditorPeriodo {...args} />;
 
-export const Default = {};
+export const Default:StoryObj = {};
